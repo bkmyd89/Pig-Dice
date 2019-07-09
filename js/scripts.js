@@ -9,7 +9,13 @@ $(document).ready(function() {
     event.preventDefault();
     $('ul').text('');
     var roll = diceArray[Math.floor(Math.random()*diceArray.length)];
-    currentRoll.push(roll);
+
+      if (roll === 1) {
+        currentRoll = [];
+        $('ul').text('');
+      } else {
+        currentRoll.push(roll);
+      }
     console.log(currentRoll);
 
     for (var i =0; i < currentRoll.length; i += 1) {
