@@ -23,6 +23,14 @@ $(document).ready(function() {
     } else {
       currentRoll.push(roll);
     }
+    if (scoreTotal >= 100) {
+      currentRoll = [];
+      $('ul').text();
+      rollTotal = 0;
+      $("#roll-total").empty();
+      scoreTotal = 0;
+      $("#score-total").empty();
+    }
     console.log(currentRoll);
 
     for (var i =0; i < currentRoll.length; i += 1) {
@@ -43,8 +51,14 @@ $(document).ready(function() {
 
     if (scoreTotal >= 100) {
       alert("Congratulations! You win the game!")
+      currentRoll = [];
+      $('ul').text();
+      rollTotal = 0;
+      $("#roll-total").empty();
+      scoreTotal = 0;
+      $("#score-total").empty();
     }
-    
+
   console.log(rollTotal);
 });
 });
