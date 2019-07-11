@@ -17,26 +17,51 @@
       <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
       <li>The first player to score 100 or more points wins!</li>
     </ol>
-
-    <p>Current Score: <span id="score-total"></span></p>
-    <p>Roll Total: <span id="roll-total"></span></p>
-
     <div class="row">
-      <div class="col-md-1">
-        <div class="rollbutton">
-          <button type="button" class="btn btn-outline-info btn-lg">Roll</button>
+      <div class="col-md-6">
+        <p>Current Score: <span id="score-total1"></span></p>
+        <p>Roll Total: <span id="roll-total1"></span></p>
+
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="rollbutton1">
+              <button type="button" class="btn btn-outline-info btn-lg">Roll</button>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="holdbutton1">
+              <button type="submit" class="btn btn-outline-light btn-lg">Hold</button>
+            </div>
+          </div>
         </div>
+        <br>
+        <ul id="list1">
+        </ul>
       </div>
-      <div class="col-md-1">
-        <div class="holdbutton">
-          <button type="submit" class="btn btn-outline-light btn-lg">Hold</button>
+
+
+    <div class="col-md-6">
+      <p>Current Score: <span id="score-total2"></span></p>
+      <p>Roll Total: <span id="roll-total2"></span></p>
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="rollbutton2">
+              <button type="button" class="btn btn-outline-info btn-lg">Roll</button>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="holdbutton2">
+              <button type="submit" class="btn btn-outline-light btn-lg">Hold</button>
+            </div>
+          </div>
         </div>
+        <br>
+        <ul id="list2">
+        </ul>
       </div>
     </div>
-    <br>
-    <ul id="list">
-    </ul>
-
   </div>
 </div>
 </body>
