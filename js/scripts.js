@@ -4,6 +4,11 @@ var currentRoll = [];
 var scoreTotal = 0;
 var rollTotal = 0;
 
+//Player 2
+var currentRoll2 = [];
+var scoreTotal2 = 0;
+var rollTotal2 = 0;
+
 //UI Logic
 
 $(document).ready(function() {
@@ -26,11 +31,11 @@ $(document).ready(function() {
     }
     if (scoreTotal >= 100) {
       currentRoll = [];
-      $('ul').text();
       rollTotal = 0;
       $("#roll-total1").empty();
       scoreTotal = 0;
       $("#score-total1").empty();
+      $('ul').empty();
     }
     console.log(currentRoll);
 
@@ -53,16 +58,22 @@ $(document).ready(function() {
     if (scoreTotal >= 100) {
       alert("Congratulations! You win the game!")
       currentRoll = [];
-      $('ul').text();
       rollTotal = 0;
       $("#roll-total1").empty();
       scoreTotal = 0;
       $("#score-total1").empty();
+      rollTotal2 = 0;
+      $("#roll-total2").empty();
+      scoreTotal2 = 0;
+      $("#score-total2").empty();
+      $('ul').empty();
     }
 
   console.log(rollTotal);
 });
 });
+
+//Player 2
 
 $(document).ready(function() {
   $(".rollbutton2").click(function(event) {
@@ -70,30 +81,30 @@ $(document).ready(function() {
     $('ul').text('');
     var roll = diceArray[Math.floor(Math.random()*diceArray.length)];
 
-    rollTotal += roll;
-    $("#roll-total2").text(rollTotal);
+    rollTotal2 += roll;
+    $("#roll-total2").text(rollTotal2);
 
     if (roll === 1) {
-      currentRoll = [];
+      currentRoll2 = [];
       $('ul').text();
-      rollTotal = 0;
+      rollTotal2 = 0;
       $("#roll-total2").empty();
       alert("Your turn has ended!")
     } else {
-      currentRoll.push(roll);
+      currentRoll2.push(roll);
     }
-    if (scoreTotal >= 100) {
-      currentRoll = [];
+    if (scoreTotal2 >= 100) {
+      currentRoll2 = [];
       $('ul').text();
-      rollTotal = 0;
+      rollTotal2 = 0;
       $("#roll-total2").empty();
-      scoreTotal = 0;
+      scoreTotal2 = 0;
       $("#score-total2").empty();
     }
-    console.log(currentRoll);
+    console.log(currentRoll2);
 
-    for (var i =0; i < currentRoll.length; i += 1) {
-      $("#list2").append("<li>" + currentRoll[i] + "</li>")
+    for (var i =0; i < currentRoll2.length; i += 1) {
+      $("#list2").append("<li>" + currentRoll2[i] + "</li>")
     }
   });
 
@@ -102,22 +113,26 @@ $(document).ready(function() {
 
     $("#roll-total2").empty();
 
-    currentRoll = [];
+    currentRoll2 = [];
 
-    scoreTotal += rollTotal;
-    $("#score-total2").text(scoreTotal);
-    rollTotal = 0;
+    scoreTotal2 += rollTotal2;
+    $("#score-total2").text(scoreTotal2);
+    rollTotal2 = 0;
 
-    if (scoreTotal >= 100) {
+    if (scoreTotal2 >= 100) {
       alert("Congratulations! You win the game!")
-      currentRoll = [];
-      $('ul').text();
-      rollTotal = 0;
+      currentRoll2 = [];
+      rollTotal2 = 0;
       $("#roll-total2").empty();
-      scoreTotal = 0;
+      scoreTotal2 = 0;
       $("#score-total2").empty();
+      rollTotal = 0;
+      $("#roll-total1").empty();
+      scoreTotal = 0;
+      $("#score-total1").empty();
+      $('ul').empty();
     }
 
-  console.log(rollTotal);
+  console.log(rollTotal2);
 });
 });
