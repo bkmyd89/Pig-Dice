@@ -1,6 +1,7 @@
 //Business Logic
 var diceArray = [1, 2, 3, 4, 5, 6];
 var currentRoll = [];
+var scoreTotal = 0;
 var rollTotal = 0;
 //UI Logic
 
@@ -10,11 +11,15 @@ $(document).ready(function() {
     $('ul').text('');
     var roll = diceArray[Math.floor(Math.random()*diceArray.length)];
 
+    rollTotal += roll;
+    $("#roll-total").text(rollTotal);
 
     if (roll === 1) {
       currentRoll = [];
-      $('ul').text('');
+      $('ul').text();
       rollTotal = 0;
+      $("#roll-total").empty();
+      alert("Your turn has ended!")
     } else {
       currentRoll.push(roll);
     }
@@ -27,13 +32,14 @@ $(document).ready(function() {
 
   $(".holdbutton").click(function(event) {
     event.preventDefault();
-    $("#roll-total").empty()
-    currentRoll.forEach(function(summand) {
-      rollTotal += summand;
-      $("#roll-total").text(rollTotal);
-    });
 
+    $("#roll-total").empty();
 
+    currentRoll = [];
+
+    scoreTotal += rollTotal;
+    $("#score-total").text(scoreTotal);
+    rollTotal = 0;
   console.log(rollTotal);
 });
 });
