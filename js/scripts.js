@@ -40,6 +40,11 @@ $(document).ready(function() {
     scoreTotal += rollTotal;
     $("#score-total").text(scoreTotal);
     rollTotal = 0;
+
+    if (scoreTotal >= 100) {
+      alert("Congratulations! You win the game!")
+    }
+    
   console.log(rollTotal);
 });
 });
